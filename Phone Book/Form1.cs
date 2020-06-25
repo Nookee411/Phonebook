@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Phone_Book.Open;
+using Phone_Book.Save;
+using Phone_Book.Classes;
+
 
 namespace Phone_Book
 {
@@ -15,6 +19,8 @@ namespace Phone_Book
     {
         private List<Note> PhoneNote;
         private int current;
+        private ISave saveBehavior;
+        private IOpen openBehavior;
 
         public MainForm()
         {
@@ -128,31 +134,23 @@ namespace Phone_Book
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            // Если в диалоговом окне нажали ОК
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK) // Если в диалоговом окне нажали ОК
             {
                 try         // обработчик исключительных ситуаций
                 {
-                    // используя sw (экземпляр класса StreamWriter),
-                    // создаем файл с заданным в диалоговом окне именем
-                    using (StreamWriter sw =
-                    new StreamWriter(saveFileDialog1.FileName))
+                    if (saveFileDialog1.FilterIndex == 1)
                     {
-                        // проходим по всем элементам списка
-                        foreach (Note MyRecord in PhoneNote)
-                        {
-                            // записываем каждое поле в отдельной строке
-                            sw.WriteLine(MyRecord.LastName);
-                            sw.WriteLine(MyRecord.Name);
-                            sw.WriteLine(MyRecord.Patronymic);
-                            sw.WriteLine(MyRecord.Street);
-                            sw.WriteLine(MyRecord.House);
-                            sw.WriteLine(MyRecord.Flat);
-                            sw.WriteLine(MyRecord.Phone);
-                        }
+                        //Txt save
+                        saveBehavior = new SaveTxt();
                     }
+                    else
+                    {
+                        saveBehavior = new SaveXml();
+                        //Xml save
+                    }
+                    saveBehavior.Save(PhoneNote, saveFileDialog1.FileName);
                 }
-                catch (Exception ex)    // перехватываем ошибку
+                catch (Exception ex)  // перехватываем ошибку
                 {
                     // выводим информацию об ошибке
                     MessageBox.Show("Не удалось сохранить данные! Ошибка: " +
@@ -164,48 +162,32 @@ namespace Phone_Book
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Note MyRecord;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            // если в диалоговом окне нажали ОК
             {
-                try         // обработчик исключительных ситуаций
+                try
                 {
-                    // считываем из указанного в диалоговом окне файла
-                    using (StreamReader sr =
-                    new StreamReader(openFileDialog1.FileName))
+                    var newNotes = new List<Note>();
+                    if (openFileDialog1.FilterIndex == 1)
                     {
-                        // пока не дошли до конца файла
-                        while (!sr.EndOfStream)
-                        {
-                            //выделяем место под запись
-                            MyRecord = new Note();
-                            // считываем значения полей записи из файла
-                            MyRecord.LastName = sr.ReadLine();
-                            MyRecord.Name = sr.ReadLine();
-                            MyRecord.Patronymic = sr.ReadLine();
-                            MyRecord.Street = sr.ReadLine();
-                            MyRecord.House = ushort.Parse(sr.ReadLine());
-                            MyRecord.Flat = ushort.Parse(sr.ReadLine());
-                            MyRecord.Phone = sr.ReadLine();
-                            //добавляем запись в список
-                            PhoneNote.Add(MyRecord);
-                        }
+                        //Txt file
+                        openBehavior = new OpenTxt();
                     }
-                    // если список пуст, то current устанавливаем в -1,
-                    // иначе текущей является первая с начала запись (номер 0)
+                    else
+                    {
+                        openBehavior = new OpenXml();
+                        //Xml file
+                    }
+                    newNotes = openBehavior.OpenFile(openFileDialog1.FileName);
+                    openBehavior.AddUnique(ref PhoneNote, newNotes);
                     if (PhoneNote.Count == 0) current = -1;
                     else current = 0;
-                    // выводим текущий элемент
                     PrintElement();
                 }
-                catch (Exception ex)    // если произошла ошибка
+                catch (Exception ex)
                 {
-                    // выводим сообщение об ошибке
-                    MessageBox.Show("При открытии файла произошла ошибка: " +
-                    ex.Message);
+                    MessageBox.Show("Ошибка: " + ex.Message);
                 }
             }
-
         }
 
         private void поискToolStripMenuItem_Click(object sender, EventArgs e)
@@ -260,7 +242,7 @@ namespace Phone_Book
         {
             if (PhoneNote.Count > 0)
             {
-                PhoneNote.Sort((x, y) => x.Patronymic.CompareTo(y.Flat));
+                PhoneNote.Sort((x, y) => x.Patronymic.CompareTo(y.Patronymic));
                 current = 0;
                 PrintElement();
             }
@@ -333,7 +315,7 @@ namespace Phone_Book
         {
             if (PhoneNote.Count > 0)
             {
-                PhoneNote.Sort((x, y) => y.Patronymic.CompareTo(x.Flat));
+                PhoneNote.Sort((x, y) => y.Patronymic.CompareTo(x.Patronymic));
                 current = 0;
                 PrintElement();
             }

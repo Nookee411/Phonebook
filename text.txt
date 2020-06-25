@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Notes>
+  <Note id="0">
+    <Lastname>Votintsev</Lastname>
+    <Name>Daniil</Name>
+    <Patronymic>Igorevich</Patronymic>
+    <Street>First St.</Street>
+    <House>21</House>
+    <Flat>41</Flat>
+    <Phone>(956) 465-4588</Phone>
+  </Note>
+  <Note id="1">
+    <Lastname>Take</Lastname>
+    <Name>Me</Name>
+    <Patronymic>to </Patronymic>
+    <Street>Church</Street>
+    <House>21</House>
+    <Flat>21</Flat>
+    <Phone>(745) 448-7878</Phone>
+  </Note>
+</Notes>
