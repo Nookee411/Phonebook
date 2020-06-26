@@ -26,6 +26,17 @@ namespace Phone_Book
         public ushort Flat;
         [DataMember]
         public string Phone;
+
+        public override bool Equals(object obj)
+        {
+            Note note = (Note)obj;
+            return (this.Name == note.Name)&&
+                    (this.Patronymic == note.Patronymic)&&
+                    (this.Flat == note.Flat)&&
+                    (this.Street== note.Street)&&
+                    (this.LastName== note.LastName)&&
+                    (this.Phone == note.Phone);
+        }
     }
 }
 
