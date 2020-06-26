@@ -586,11 +586,13 @@
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "Text (.txt)|*.txt|XML file (.xml)|*.xml|Bin file (.dat)|*dat";
+            this.saveFileDialog1.Filter = "Text (.txt)|*.txt|XML file (.xml)|*.xml|Bin file (.dat)|*dat|Json file (.json)|*." +
+    "json";
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.Filter = "Text (.txt)|*.txt|XML file (.xml)|*.xml|Bin file (.dat)|*dat";
+            this.openFileDialog1.Filter = "Text (.txt)|*.txt|XML file (.xml)|*.xml|Bin file (.dat)|*dat|Json file (.json)|*." +
+    "json";
             // 
             // MainForm
             // 

@@ -11,12 +11,13 @@ using System.IO;
 using Phone_Book.Open;
 using Phone_Book.Save;
 using Phone_Book.Classes;
-
+using System.Xml.Serialization;
 
 namespace Phone_Book
 {
     public partial class MainForm : Form
     {
+        [XmlElement("Notes")]
         private List<Note> PhoneNote;
         private int current;
         private ISave saveBehavior;
@@ -138,27 +139,7 @@ namespace Phone_Book
             {
                 try         // обработчик исключительных ситуаций
                 {
-                    switch (saveFileDialog1.FilterIndex)
-                    {
-                        case 1:
-                            {
-                                //Txt file
-                                saveBehavior = new SaveTxt();
-                                break;
-                            }
-                        case 2:
-                            {
-                                saveBehavior= new SaveXml();
-                                //Xml file
-                                break;
-                            }
-                        case 3:
-                            {
-                                //Binary file
-                                saveBehavior= new SerializeBin();
-                                break;
-                            }
-                    }
+                    saveBehavior = SaveCreator.Create(saveFileDialog1.FileName,saveFileDialog1.FilterIndex);
                     saveBehavior.Save(PhoneNote, saveFileDialog1.FileName);
                 }
                 catch (Exception ex)  // перехватываем ошибку
@@ -178,27 +159,7 @@ namespace Phone_Book
                 try
                 {
                     var newNotes = new List<Note>();
-                    switch (openFileDialog1.FilterIndex)
-                    {
-                        case 1:
-                            {
-                                //Txt file
-                                openBehavior = new OpenTxt();
-                                break;
-                            }
-                        case 2:
-                            {
-                                openBehavior = new OpenXml();
-                                //Xml file
-                                break;
-                            }
-                        case 3:
-                            {
-                                //Binary file
-                                openBehavior = new DeserializeBin();
-                                break;
-                            }
-                    }
+                    openBehavior = OpenCreator.Create(openFileDialog1.FileName, openFileDialog1.FilterIndex);
                     newNotes = openBehavior.OpenFile(openFileDialog1.FileName);
                     openBehavior.AddUnique(ref PhoneNote, newNotes);
                     if (PhoneNote.Count == 0) current = -1;

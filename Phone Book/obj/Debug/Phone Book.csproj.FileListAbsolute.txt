@@ -10,3 +10,22 @@ C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Л
 C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\obj\Debug\Phone_Book.AddForm.resources
 C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\obj\Debug\Phone_Book.SearchNameForm.resources
 C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\obj\Debug\Phone Book.csproj.CoreCompileInputs.cache
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Buffers.dll
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Memory.dll
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Text.Json.dll
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.ValueTuple.dll
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Buffers.xml
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Memory.xml
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Text.Json.xml
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\bin\Debug\System.ValueTuple.xml
+C:\Users\danii\OneDrive\Desktop\Учеба\2 курс\2 семестр\ООП\Лабораторная работа 1\Lab 1\Phone Book\obj\Debug\Phone Book.csproj.CopyComplete

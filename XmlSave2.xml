@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfNote xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Note>
+    <LastName>Take</LastName>
+    <Name>Me</Name>
+    <Patronymic>to</Patronymic>
+    <Street>Church</Street>
+    <House>21</House>
+    <Flat>41</Flat>
+    <Phone>(112) 165-4545</Phone>
+  </Note>
+  <Note>
+    <LastName>I'll worship</LastName>
+    <Name> like a dog</Name>
+    <Patronymic> at the</Patronymic>
+    <Street>shrine of your lies</Street>
+    <House>123</House>
+    <Flat>145</Flat>
+    <Phone>(334) 234-2352</Phone>
+  </Note>
+</ArrayOfNote>
