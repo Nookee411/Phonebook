@@ -352,21 +352,21 @@
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click_1);
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
@@ -382,15 +382,15 @@
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.открытьToolStripMenuItem.Text = "Открыть ";
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.открытьToolStripMenuItem.Text = "Открыть (Ctrl+O)";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить..";
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.сохранитьToolStripMenuItem.Text = "Сохранить.. (Ctrl+S)";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // поискToolStripMenuItem
@@ -586,11 +586,11 @@
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "Text (.txt)|*.txt|XML file (.xml)|*.xml";
+            this.saveFileDialog1.Filter = "Text (.txt)|*.txt|XML file (.xml)|*.xml|Bin file (.dat)|*dat";
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.Filter = "Text (.txt)|*.txt|XML file (.xml)|*.xml";
+            this.openFileDialog1.Filter = "Text (.txt)|*.txt|XML file (.xml)|*.xml|Bin file (.dat)|*dat";
             // 
             // MainForm
             // 
@@ -616,10 +616,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phone Book";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.HouseNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FlatNumericUpDown)).EndInit();
             this.statusStrip1.ResumeLayout(false);

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Phone_Book
 {
+    [Serializable]
     public class Note
     {
         public string LastName;

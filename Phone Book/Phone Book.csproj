@@ -59,6 +59,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Note.cs" />
+    <Compile Include="Open\DeserializeBin.cs" />
     <Compile Include="Open\IOpen.cs" />
     <Compile Include="Open\OpenTxt.cs" />
     <Compile Include="Open\OpenXml.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Save\ISave.cs" />
     <Compile Include="Save\SaveTxt.cs" />
     <Compile Include="Save\SaveXml.cs" />
+    <Compile Include="Save\SerializeBin.cs" />
     <Compile Include="SearchNameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Вопрос.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

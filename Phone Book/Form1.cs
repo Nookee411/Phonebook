@@ -138,15 +138,26 @@ namespace Phone_Book
             {
                 try         // обработчик исключительных ситуаций
                 {
-                    if (saveFileDialog1.FilterIndex == 1)
+                    switch (saveFileDialog1.FilterIndex)
                     {
-                        //Txt save
-                        saveBehavior = new SaveTxt();
-                    }
-                    else
-                    {
-                        saveBehavior = new SaveXml();
-                        //Xml save
+                        case 1:
+                            {
+                                //Txt file
+                                saveBehavior = new SaveTxt();
+                                break;
+                            }
+                        case 2:
+                            {
+                                saveBehavior= new SaveXml();
+                                //Xml file
+                                break;
+                            }
+                        case 3:
+                            {
+                                //Binary file
+                                saveBehavior= new SerializeBin();
+                                break;
+                            }
                     }
                     saveBehavior.Save(PhoneNote, saveFileDialog1.FileName);
                 }
@@ -167,15 +178,26 @@ namespace Phone_Book
                 try
                 {
                     var newNotes = new List<Note>();
-                    if (openFileDialog1.FilterIndex == 1)
+                    switch (openFileDialog1.FilterIndex)
                     {
-                        //Txt file
-                        openBehavior = new OpenTxt();
-                    }
-                    else
-                    {
-                        openBehavior = new OpenXml();
-                        //Xml file
+                        case 1:
+                            {
+                                //Txt file
+                                openBehavior = new OpenTxt();
+                                break;
+                            }
+                        case 2:
+                            {
+                                openBehavior = new OpenXml();
+                                //Xml file
+                                break;
+                            }
+                        case 3:
+                            {
+                                //Binary file
+                                openBehavior = new DeserializeBin();
+                                break;
+                            }
                     }
                     newNotes = openBehavior.OpenFile(openFileDialog1.FileName);
                     openBehavior.AddUnique(ref PhoneNote, newNotes);
@@ -385,6 +407,14 @@ namespace Phone_Book
                 PrintElement();
                 
             }
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.O && ModifierKeys == Keys.Control)
+                открытьToolStripMenuItem_Click(sender, e);
+            else if (e.KeyCode == Keys.S && ModifierKeys == Keys.Control)
+                сохранитьToolStripMenuItem_Click(sender, e);
         }
     }
 
